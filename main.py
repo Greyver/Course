@@ -1,13 +1,26 @@
 import requests
-from flask import Flask, render_template
+import locale
+from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
+
+
+locale.setlocale(locale.LC_ALL, '')
+
 
 app = Flask("__name__")
 
 
-@app.route("/")
-def index():
-    return render_template("index.html", title="Пробник")
+@app.route('/', methods=['GET', 'POST'])
+def converter():
+    if request.method == 'POST':
+        from_currency = request.form['from']
+        to_currency = request.form['to']
+        print(f'Конвертировать из {from_currency} в {to_currency}')
+        print({from_currency})
+        print(request.form)
+        print("Строкой выше")
+        # Добавьте код для конвертации валюты здесь
+    return render_template("prob.html")
 
 
 @app.route("/about")
@@ -26,7 +39,7 @@ soup = BeautifulSoup(full_page.content, 'html.parser')
 # выборка нужного тега и информации
 convert = soup.find(
     "span", {"class": "DFlfde SwHCTb", "data-precision": "2"})
-print(convert.text.replace('.', ','))
+print(convert.text.replace('.', locale.localeconv()['decimal_point']))
 
 if __name__ == "__main__":
     app.run()

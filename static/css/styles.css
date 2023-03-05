@@ -1,0 +1,29 @@
+.atuin-btn {
+    display: inline-flex;
+    margin: 10px;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: rgb(11, 8, 194);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Рўahoma, sans-serif;
+    background: #b30505;
+    cursor: pointer;
+    border: 2px solid #f06464;
+    outline: 1px solid;
+    outline-color: #ff0404;
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1); 
+}
+.atuin-btn:hover,
+.atuin-btn:active,
+.atuin-btn:focus {
+    box-shadow: inset 0 0 20px #BFE2FF;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    color: rgb(48, 236, 10);
+}
