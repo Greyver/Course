@@ -1,57 +1,94 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="./styles/style.css">
-  
-    <meta property="og:title" content="Заголовок страницы в OG">
-    <meta property="og:description" content="Описание страницы в OG">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:url" content="https://example.com/">
+    <title>Дача</title>
+    <style>
+      .tree {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        right: 200px;
+      }
+
+      .tree .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #095205;
+        position: absolute;
+      }
+
+      .tree .triangle1 {
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        top: 60px;
+      }
+
+      .tree .triangle2 {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        top: 130px;
+      }
+
+      .tree .triangle3 {
+        top: 200px;
+      }
+
+      .tree .trunk {
+        width: 20px;
+        height: 40px;
+        background-color: #331304;
+        top: 300px;
+        position: relative;
+        left: 5px;
+        transform: translateX(-40%);
+      }
+
+      .house {
+        position: relative;  
+        top: 100px;
+        left: 500px;
+        right: 400px;
+        width: 200px;
+        height: 200px;
+        background-color: #92F6F7;
+      }
+
+      .roof {
+        width: 0;
+        height: 0;
+        position: relative;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 100px solid #FA6114;
+        bottom: 100px;
+}
+
+
+
+      .door {
+        width: 40px;
+        height: 80px;
+        background-color: #8A2E07;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        transform: translateX(-50%);
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>Это мой сайт</h1>
-      <p>Он хороший</p>
-      <nav>
-        <ul>
-          <li><a href="index.html">Эта страница</a></li>
-          <li><a href="catalog.html">Другая страница</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <article>
-        <section>
-          <h2>Первая секция</h2>
-          <p>Она обо мне</p>
-          <img src="images/image.png" alt="Человек и пароход">
-          <p>Но может быть и о семантике, я пока не решил.</p>
-        </section>
-        <section>
-          <h2>Вторая секция</h2>
-          <p>Она тоже обо мне</p>
-        </section>
-        <section>
-          <h2>И третья</h2>
-          <p>А если так?</p>
-        </section>
-      </article>
-    </main>
-    <form method="post">
-        <label for="selected-item">Выберите элемент из списка:</label>
-        <select id="selected-item" name="selected-item">
-            <option value="item-1">Элемент 1</option>
-            <option value="item-2">Элемент 2</option>
-            <option value="item-3">Элемент 3</option>
-        </select>
-        <button type="submit">Отправить</button>
-    </form>
-    <footer>
-      <p>Сюда бы я вписал информацию об авторе и ссылки на другие сайты</p>
-    </footer>
-    <!-- сюда можно подключить jquery <script src="scripts/app.js" defer></script> -->
+    <div class="tree">
+      <div class="triangle triangle1"></div>
+      <div class="triangle triangle2"></div>
+      <div class="triangle triangle3"></div>
+      <div class="trunk"></div>
+    </div>
+    <div class="house">
+      <div class="roof"></div>
+      <div class="door"></div>
+    </div>
   </body>
 </html>
+

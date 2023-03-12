@@ -1,3 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333232;
+    }
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    
+}
+
+select {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: rgb(255, 153, 0);
+    color: rgb(255, 0, 0);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: black;
+}
 .atuin-btn {
     display: inline-flex;
     margin: 10px;
@@ -6,13 +43,13 @@
     font-size: 20px;
     line-height: 20px;
     padding: 12px 30px;
-    color: rgb(11, 8, 194);
+    color: rgb(255, 153, 0);
     font-weight: bold;
     text-transform: uppercase;
     font-family: 'Roboto Condensed', Рўahoma, sans-serif;
-    background: #b30505;
+    background: #3d3b3b;
     cursor: pointer;
-    border: 2px solid #f06464;
+    border: 2px solid #ffd700;
     outline: 1px solid;
     outline-color: #ff0404;
     outline-offset: 0px;
@@ -22,8 +59,91 @@
 .atuin-btn:hover,
 .atuin-btn:active,
 .atuin-btn:focus {
-    box-shadow: inset 0 0 20px #BFE2FF;
+    box-shadow: inset 0 0 20px rgb(255, 153, 0);
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
-    color: rgb(48, 236, 10);
+    color: #ffd700;
+}
+
+header {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding-left: -40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0; 
+    width: 100%; 
+    z-index: 1; 
+    margin-right: 10;
+}
+
+header::after {
+    content: "";
+    display: block;
+    height: 4px; 
+    background-color: #ffd700; 
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+
+}
+
+.logo {
+font-size: 28px;
+font-weight: bold;
+}
+
+#myId {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: -20px;
+    }
+
+nav li {
+    margin-left: 10px; /* Внешний отступ между пунктами меню */
+    left: -20px;
+}
+
+nav a {
+    color: #fff; /* Белый цвет текста */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    left: -20px;
+}
+
+@media only screen{
+html,
+body{
+    overflow:hidden;
+    height:100%;
+}
+
+.logo{
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 2em;
+    font-family:'sonos-logoregular';
+    background:-webkit-linear-gradient(left,#f2f0f7,#bdb7b8,#929191,#424142,#2f2f30);
+    background:linear-gradient(left,#929191, #424142, #2f2f30, #f2f0f7,#bdb7b8,);
+    color:transparent;
+    -webkit-background-clip: text;
+    -webkit-animation: animate-logo 7s linear infinite both alternate;
+    transition:font-size 500ms ease-in-out;
+}
+}
+
+@-webkit-keyframes animate-logo{
+0%{background-position:0 3200px}
+100%{background-position:3200px 0}
 }

@@ -1,67 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" type="text/css" href="static\css\styles.css">
   <head>
     <meta charset="UTF-8" />
     <title>Конвертер</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #f2f2f2;
-      }
-
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      select {
-        margin: 0.5rem;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 0.25rem;
-        background-color: #fff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        font-size: 1rem;
-      }
-
-      button {
-        margin: 1rem;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 0.25rem;
-        background-color: #007bff;
-        color: #fff;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      button:hover {
-        background-color: #0062cc;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
   <body>
-    <h1>Конвертер</h1>
+    <header>
+      <div id="myId">My Website</div>
+      <nav left: -20px>
+        <ul>
+          <li><a href="#">О себе</a></li>
+          <li><a href="#">Для чего этот сайт?</a></li>
+          <li><a href="#">Приветствие</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="logo">Конвертер</div>
     <form method="POST" action="/">
       <select id="from" name="from">
         <option value="usd">Доллар США (USD)</option>
         <option value="eur">Евро (EUR)</option>
-        <option value="rub">Российский рубль (RUB)</option>
+        <option value="grn">Гривна (GRN)</option>
       </select>
       <select id="to" name="to">
         <option value="usd">Доллар США (USD)</option>
         <option value="eur">Евро (EUR)</option>
-        <option value="rub">Российский рубль (RUB)</option>
+        <option value="grn">Гривна (GRN)</option>
       </select>
-      <button type="submit" class="atuin-btn", class = 'convertButton'>Конвертировать</button>
+      <button type="submit" class="atuin-btn convertButton">Конвертировать</button>
     </form>
+    {% if from_currency %}
+    <h1>{{ from_currency }}</h1>
+    {% endif %}
   </body>
 </html>
