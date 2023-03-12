@@ -24,7 +24,6 @@ eur = {"usd": 'https://www.google.com/search?q=euro+to+usd&sxsrf=AJOqlzV7AF2cz_u
 
 
 def converts(val1, val2):
-    print("я вызвалась")
     if val1 != val2:
         if val1 == "usd":
             val = usd[val2]
@@ -65,18 +64,17 @@ def converter():
     if request.method == 'POST':
         from_currency = request.form['from']
         to_currency = request.form['to']
-        print(f'Конвертировать из {from_currency} в {to_currency}')
-        print(from_currency)
-        print(request.form)
-        print("Строкой выше")
-        return render_template("prob.html", from_currency=facespalm(converts(from_currency, to_currency)))
+        currency = facespalm(converts(from_currency, to_currency))
+        if request.form["number"] != '':
+            number = float(request.form["number"])
+            result = number * \
+                locale.atof(currency.replace(
+                    '.', locale.localeconv()['decimal_point'])) / 1000
+            return render_template("index.html", from_currency=currency, result=result)
+        else:
+            return render_template("index.html", from_currency=facespalm(converts(from_currency, to_currency)))
     else:
-        return render_template("prob.html")
-
-
-@app.route("/about")
-def about():
-    return "<h1> Кто я </h1>"
+        return render_template("index.html")
 
 
 if __name__ == "__main__":
